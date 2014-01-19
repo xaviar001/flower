@@ -5,8 +5,15 @@
 	<EditTextPreference android:title="@string/prefPasswordLabel"
 		android:key="password" android:summary="@string/prefPasswordSummary"
 		android:password="true"></EditTextPreference>
-	<EditTextPreference android:title="@string/prefApiLabel"
-		android:summary="@string/prefApiSummary" android:key="apiroot"></EditTextPreference>
+	
+	<EditTextPreference android:title="@string/simSubIDLabel"
+		android:summary="@string/prefSimSubIDSummary" android:key="simSubID"></EditTextPreference>
+	
+	<EditTextPreference android:title="@string/serverUrlLabel"
+		android:summary="@string/prefServerUrlSummary" android:key="serverurl"></EditTextPreference>
+	<EditTextPreference android:title="@string/restUrlLabel"
+		android:summary="@string/prefRestUrlSummary" android:key="resturl"></EditTextPreference>
+	
 	<ListPreference android:entryValues="@array/locationProviderValues"
 		android:entries="@array/locationProviderLabels" android:key="locationProvider"
 		android:summary="@string/summaryLocationProvider" android:title="@string/titleLocationProvider" />

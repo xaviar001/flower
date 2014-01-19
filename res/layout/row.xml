@@ -11,19 +11,19 @@
     <!--  -->
     <TextView android:layout_height="wrap_content"
       android:layout_width="fill_parent" android:layout_weight="1"
-      android:id="@+id/textUser" android:text="Slashdot"
+      android:id="@+id/textUser" android:text="Xaviar"
       android:textStyle="bold" />
 
     <!--  -->
     <TextView android:layout_height="wrap_content"
       android:layout_width="fill_parent" android:layout_weight="1"
       android:gravity="right" android:id="@+id/textCreatedAt"
-      android:text="10 minutes ago" />
+      android:text="8 minutes ago" />
   </LinearLayout>
 
   <!--  -->
   <TextView android:layout_height="wrap_content"
     android:layout_width="fill_parent" android:id="@+id/textText"
-    android:text="Firefox comes to Android" />
+    android:text="You have just arrived home!" />
 
 </LinearLayout>

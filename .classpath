@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="lib" path="jtwitter-yamba.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="libs/flexjson-2.1.jar"/>
+	<classpathentry kind="lib" path="libs/gson-2.1-sources.jar"/>
+	<classpathentry kind="lib" path="libs/gson-2.1.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-core-asl-1.7.1.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-mapper-asl-1.7.1.jar"/>
+	<classpathentry kind="lib" path="libs/spring-android-rest-template-1.0.0.M1.jar"/>
+	<classpathentry kind="lib" path="libs/littlefluffylocationlibrary.jar"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="C:/prog/adt-bundle-windows-x86_64-20130514/adt-bundle-windows-x86_64-20130514/sdk/tools/support/annotations.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

