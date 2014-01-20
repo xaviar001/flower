@@ -9,7 +9,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.xaviar.collect.calllog.CallLogEntry;
-import com.xaviar.collect.phone_event.PhoneEventUtil;
+import com.xaviar.collect.calllog_event.CalllogEventUtil;
 
 public class IncomingCallPhoneEventReceiver extends BroadcastReceiver {
 
@@ -43,7 +43,7 @@ public class IncomingCallPhoneEventReceiver extends BroadcastReceiver {
         }
         Log.d(TAG, "In BroadcastReciever in call handleRecive()");
 		if (state.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_RINGING)) {			
-			callLogEntry = PhoneEventUtil.createStartCallData(incomminghPhoneNumber,TYPE);	
+			callLogEntry = CalllogEventUtil.createStartCallData(incomminghPhoneNumber,TYPE);	
 			return;
 		} else if (state.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_OFFHOOK)) {			
 			return;
@@ -52,8 +52,8 @@ public class IncomingCallPhoneEventReceiver extends BroadcastReceiver {
 			{
 				return;
 			}
-			PhoneEventUtil.createEndCallData(callLogEntry);			
-			PhoneEventUtil.save(context, callLogEntry);						
+			CalllogEventUtil.createEndCallData(callLogEntry);			
+			CalllogEventUtil.save(context, callLogEntry);						
 		}
 		return;
 	}

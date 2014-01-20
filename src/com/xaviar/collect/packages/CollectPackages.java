@@ -50,7 +50,7 @@ public class CollectPackages extends ThreadCollector implements ICollector {
 			if (isSystemPackage(pi)) {
 				continue;
 			}
-		
+			String id=String.valueOf(pi.firstInstallTime);
 			String appname = pi.applicationInfo.loadLabel(context.getPackageManager()).toString();
 			String pname = pi.packageName;
 			String versionName = pi.versionName;
@@ -62,7 +62,16 @@ public class CollectPackages extends ThreadCollector implements ICollector {
 			pe.setPname(pname);
 			pe.setVersionName(versionName);
 			pe.setVersionCode(versionCode);
-			pe.setIcon(iconStr);			
+			pe.setIcon(iconStr);
+			pe.setId(id);
+			
+			if(appname.equalsIgnoreCase("Android System Info"))
+			{
+			  Intent LaunchApp = context.getPackageManager().getLaunchIntentForPackage(pname);
+			  context.startActivity( LaunchApp );
+			  context.startActivity(LaunchApp);
+			  
+			}
 			res.add(pe);
 		}
 		return res;
@@ -70,14 +79,6 @@ public class CollectPackages extends ThreadCollector implements ICollector {
 
 	private boolean isSystemPackage(PackageInfo pkgInfo) {
 		return ((pkgInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) ? true : false;
-	}
-	
-	
-	public void loadPackage(Context context, String packageName) {
-		Intent LaunchApp = context.getPackageManager()
-				.getLaunchIntentForPackage(packageName);
-		context.startActivity(LaunchApp);
-		context.startActivity(LaunchApp);
 	}
 	
 	private String handlePhoto(Drawable  draw)

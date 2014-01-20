@@ -8,7 +8,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.xaviar.collect.calllog.CallLogEntry;
-import com.xaviar.collect.phone_event.PhoneEventUtil;
+import com.xaviar.collect.calllog_event.CalllogEventUtil;
 
 public class OutgoingCallPhoneEventReceiver extends BroadcastReceiver {
 
@@ -45,15 +45,15 @@ public class OutgoingCallPhoneEventReceiver extends BroadcastReceiver {
 
 		if (null == state) {
 			String phoneNumber = intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
-			callLogEntry = PhoneEventUtil.createStartCallData(phoneNumber,TYPE);				
+			callLogEntry = CalllogEventUtil.createStartCallData(phoneNumber,TYPE);				
 		} else if (state.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_RINGING)) {			
 			return;
 		} else if (state.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_OFFHOOK)) {			
 			return;
 		} else if (state.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_IDLE)) {
 			if(null == callLogEntry) { return;}
-			PhoneEventUtil.createEndCallData(callLogEntry);				
-			PhoneEventUtil.save(context, callLogEntry);
+			CalllogEventUtil.createEndCallData(callLogEntry);				
+			CalllogEventUtil.save(context, callLogEntry);
 		} 		
 	}
 }

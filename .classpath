@@ -12,6 +12,6 @@
 	<classpathentry kind="lib" path="libs/spring-android-rest-template-1.0.0.M1.jar"/>
 	<classpathentry kind="lib" path="libs/littlefluffylocationlibrary.jar"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry exported="true" kind="lib" path="C:/prog/adt-bundle-windows-x86_64-20130514/adt-bundle-windows-x86_64-20130514/sdk/tools/support/annotations.jar"/>
+	<classpathentry kind="lib" path="libs/annotations.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

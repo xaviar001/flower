@@ -62,9 +62,9 @@ public class CollectDeviceAccount  extends ThreadCollector implements ICollector
 			//String timeStr = String.valueOf(time);
 			//account.setId(timeStr);
 			//account.setDate(timeStr);
-			account.setKey(key);
+			account.setAccountName(key);
 			String value = accountMap.get(key);
-			account.setValue(value);
+			account.setAccountType(value);
 			accountsList.add(account);
 		}
 		return accountsList;

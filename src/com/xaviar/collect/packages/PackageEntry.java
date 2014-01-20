@@ -1,7 +1,14 @@
 package com.xaviar.collect.packages;
 
 public class PackageEntry {
+	
 	private String appname = "";
+	private String pname = "";
+	private String versionName = "";
+	private String versionCode ="";
+	private String icon;
+	private String id;
+	
 	public String getAppname() {
 		return appname;
 	}
@@ -26,10 +33,6 @@ public class PackageEntry {
 	public void setVersionCode(String versionCode) {
 		this.versionCode = versionCode;
 	}
-	private String pname = "";
-	private String versionName = "";
-	private String versionCode ="";
-	String icon;
 	// private void prettyPrint() {
 	// Log.v(appname + "\t" + pname + "\t" + versionName + "\t" + versionCode);
 	public String getIcon() {
@@ -37,5 +40,11 @@ public class PackageEntry {
 	}
 	public void setIcon(String icon) {
 		this.icon = icon;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 }

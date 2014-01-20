@@ -20,7 +20,7 @@ public class DataHolder {
 	public static final String PHONE_PARAMS = "PHONE_PARAMS";
 	public static final String CALL_LOG = "CALL_LOG";
 	public static final String SMS_EVENT = "SMS_EVENT";
-	public static final String PHONE_EVENT = "PHONE_EVENT";
+	public static final String CALL_LOG_EVENT = "CALL_LOG_EVENT";
 	public static final String LOCATION_EVENT = "LOCATION_EVENT";
 	public static final String STATE = "STATE";
 	public static final String GET_SERVER_WISH = "GET_SERVER_WISH";
@@ -30,7 +30,7 @@ public class DataHolder {
 	public static final String PACKAGES = "PACKAGES";
 
 	public static final String FILE_STRING = "FILE_STRING";
-
+	
 	public boolean validate() {
 		return true;
 	}
